@@ -1,0 +1,13 @@
+<html lang="pt-BR>
+<head>
+<meta chatset="UTF-8">
+<title>Pokédex de Hoenn</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>Pokédex - Região de Hoenn</h1>
+<div id="pokedex"></div>
+
+<script src="script.js"></script>
+</body>
+</html>
