@@ -1,13 +1,74 @@
+<!DOCTYPE html>
 <html lang="pt-BR>
-<head>
-<meta chatset="UTF-8">
-<title>Pokédex de Hoenn</title>
-<link rel="stylesheet" href="style.css">
-</head>
- <body>
-<h1>Pokédex - Região de Hoenn</h1>
-<div id="pokedex"></div>
+   <head>
+   <meta chatset="UTF-8">
+   <title>Pokédex de Hoenn</title>
+ <style>
 
-<script src="script.js"></script>
- </body>
+   body {
+        font-family: Arial, Times New Romam;
+        background-color: #ff6347;
+        text-align: center;
+        margin: 4;
+        padding: 4;
+}
+
+     h1 {
+        color: #f8f8ff;
+        margin-top: 20px;
+}
+
+    #podedex {
+             display: flex;
+             flex-warp: wrap;
+             justify-content: center;
+             padding: 20px;
+}
+
+  .pokemon-card {
+                backgroud-color: #f0f8ff
+                border: 2px solid: #ddd;
+                border-radius: 10px;
+                width: 150px;
+                margind: 10px;
+                padding: 10px;
+                box-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+}
+    .pokemon-card img {
+                      width: 100px;
+                      padding: 100px;
+}
+</style>
+</head>
+       <body>
+             <h1>Pokédex - Região de Hoenn</h1>
+       <div id="pokedex"></div>
+
+<script>
+      const pokedexContainer = documento.getElementById("pokedex");
+
+// IDs dos Pokémon de Hoenn: 252 (Treecko) a 386 (Deoxys)
+for (let i = 252; i <= 386; i++) {
+ fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
+ .then(response => response.json())
+ .then(pokemon => {
+                   const card = document.createElement("div);
+                 card.classList.add("pokemon-card";
+card.innetHTML =
+<h3>#${pokemon.id} - ${pokemon.name}</h3>
+    <img src="${pokemon.sprites.front_default"}" alt="${pokemon.name}">
+            <p>Tipo: ${pokemon.types.map(t => t.type.name).join(", ")}</p>
+  `;
+
+pokedexContainer.appendChild(card);
+})
+  .catch(error => {
+console.error(`Erro ao carregar o Pokémon ${i}:`, error);
+});
+}
+ </script>
+</body>
 </html>
+
+
+
