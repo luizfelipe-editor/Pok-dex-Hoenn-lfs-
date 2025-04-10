@@ -1,33 +1,33 @@
 <!DOCTYPE html>
-<html lang="pt-BR>
+<html lang="pt-BR">
    <head>
-   <meta chatset="UTF-8">
+   <meta charset="UTF-8">
    <title>Pokédex de Hoenn</title>
  <style>
 
    body {
-        font-family: Arial, Times New Romam;
+        font-family: Arial, Times New Roman;
         background-color: #ff6347;
         text-align: center;
-        margin: 4;
-        padding: 4;
+        margind: 4px;
+        padding: 4px;
 }
 
      h1 {
         color: #f8f8ff;
-        margin-top: 20px;
+        margind-top: 20px;
 }
 
-    #podedex {
-             display: flex;
-             flex-warp: wrap;
-             justify-content: center;
-             padding: 20px;
+    #pokedex {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 20px;
 }
 
   .pokemon-card {
-                backgroud-color: #f0f8ff
-                border: 2px solid: #ddd;
+                background-color: #f0f8ff
+                border: 2px solid #ddd;
                 border-radius: 10px;
                 width: 150px;
                 margind: 10px;
@@ -45,18 +45,18 @@
        <div id="pokedex"></div>
 
 <script>
-      const pokedexContainer = documento.getElementById("pokedex");
+      const pokedexContainer = document.getElementById("pokedex");
 
 // IDs dos Pokémon de Hoenn: 252 (Treecko) a 386 (Deoxys)
 for (let i = 252; i <= 386; i++) {
  fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
  .then(response => response.json())
  .then(pokemon => {
-                   const card = document.createElement("div);
-                 card.classList.add("pokemon-card";
-card.innetHTML =
+                   const card = document.createElement(div);
+                 card.classList.add("pokemon-card")
+card.innerHTML = `
 <h3>#${pokemon.id} - ${pokemon.name}</h3>
-    <img src="${pokemon.sprites.front_default"}" alt="${pokemon.name}">
+    <img src="${pokemon.sprites.front_default}" alt="${pokemon.name}">
             <p>Tipo: ${pokemon.types.map(t => t.type.name).join(", ")}</p>
   `;
 
