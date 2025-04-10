@@ -52,7 +52,7 @@ for (let i = 252; i <= 386; i++) {
  fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
  .then(response => response.json())
  .then(pokemon => {
-                   const card = document.createElement(div);
+                   const card = document.createElement("div");
                  card.classList.add("pokemon-card")
 card.innerHTML = `
 <h3>#${pokemon.id} - ${pokemon.name}</h3>
